@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<td>Name</td>
+		<td>Description</td>
+		<td>Price</td>
+		<td>Choice</td>
+		<td></td>
+	</tr>
+{% for o in playground_list %}
+<tr>
+<td><a href="{% url playground_detail o.id %}">{{ o.name }}</a></td>
+<td>{{ o.description }}</td>
+<td>${{ o.price }}</td>
+<td>{{ o.my_choices }}</td>
+<td><a href="{% url playground_update o.id %}">Edit</a></td>
+</tr>
+{% endfor %}
+</table>
