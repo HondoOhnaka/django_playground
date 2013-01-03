@@ -1,0 +1,7 @@
+<h3>The Form Is Here</h3>
+<form method="post" action=".">
+{% csrf_token %}
+{{ form.as_p }}
+
+<input type="submit" value="Save" />
+</form>
