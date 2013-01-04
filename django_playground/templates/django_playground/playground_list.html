@@ -8,7 +8,7 @@
 	</tr>
 {% for o in playground_list %}
 <tr>
-<td><a href="{% url playground_detail o.id %}">{{ o.name }}</a></td>
+<td><a href="{{ o.get_absolute_url }}">{{ o.name }}</a></td>
 <td>{{ o.description }}</td>
 <td>${{ o.price }}</td>
 <td>{{ o.my_choices }}</td>

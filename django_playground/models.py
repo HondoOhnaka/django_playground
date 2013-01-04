@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse, reverse_lazy
 
 MY_CHOICES = (
 	('FOO', 'foo'),
@@ -14,3 +15,12 @@ class Playground(models.Model):
 
 	def __unicode__(self):
 		return u"This is a %s" % (self.name,)
+
+	def get_absolute_url(self):
+		return reverse('playground_detail', kwargs={'pk': self.pk})
+
+class Simple(models.Model):
+	foo = models.CharField(max_length=10)
+
+	def get_absolute_url(self):
+		return reverse('simple_list')

@@ -9,12 +9,10 @@ from django.core.urlresolvers import reverse
 class PlaygroundCreateView(CreateView):
 	template_name = 'django_playground/playground_form.html'
 	form_class = PlaygroundForm
-	success_url = "/playground/"
 
 class PlaygroundUpdateView(UpdateView):
 	template_name = 'django_playground/playground_form.html'
 	form_class = PlaygroundForm
-	success_url = "/playground/"
 
 	def get_object(self, queryset=None):
 		try:
@@ -28,6 +26,6 @@ class PlaygroundListView(ListView):
 	context_object_name = 'playground_list'
 
 class PlaygroundDetailView(DetailView):
+	model = Playground
 	template_name = 'playground_detail.html'
 	context_object_name = 'playground'
-	model = Playground
